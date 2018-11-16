@@ -25,7 +25,15 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
       answer-> index_2 = hash_table_retrieve(ht, weight2); 
     }
   }
-  return NULL;
+
+  destroy_hash_table(ht); 
+
+  if(answer != NULL){
+    return answer; 
+  }else{
+    return NULL;
+  }
+  
 }
 
 void print_answer(Answer *answer)
