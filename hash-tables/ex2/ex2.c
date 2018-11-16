@@ -18,7 +18,7 @@ char **reconstruct_trip(Ticket **tickets, int length)
   route[0] = hash_table_retrieve(hash, NULL); 
   // to find second value and other remaining values, save destination of first, then search hash for the first array value
   for(int i = 1; i < length; i++){
-    route[i] = hash_table_retrieve(hash, route[i-1])
+    route[i] = hash_table_retrieve(hash, route[i-1]); 
   }
   //destroy hash table and clear memory when done
   destroy_hash_table(hash); 
