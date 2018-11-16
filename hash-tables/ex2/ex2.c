@@ -8,9 +8,14 @@ char **reconstruct_trip(Ticket **tickets, int length)
 {
   HashTable *hash = create_hash_table(16);
   char **route = malloc(length * sizeof(char *));
-
-  // YOUR CODE HERE
-
+  
+  // create a hash table that holds the source as the key and the destination as the value;
+  for(int i = 0; i < length; i++){
+    hash_table_insert(hash, tickets[i]-> source, tickets[i]-> destination); 
+  }
+  // populate routes array
+  //first find the first element in the array by locating the key which value is NULL
+  // to find second value and other remaining values, save destination of first, then search hash for the first array value
   return route;
 }
 
