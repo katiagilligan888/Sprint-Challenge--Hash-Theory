@@ -53,10 +53,10 @@ A     B     result
 ```
 A     B     result
 -------------------
-0     0       ?
-0     1       ?
-1     0       ?
-1     1       ?
+0     0       (True or False) && (True or False) = False
+0     1       (True or True) && (True or True) = True
+1     0       (False or False) && (False or False)= False
+1     1       (False or True) && (False or True) = False
 ```
 
 3. `¬(A ∧ B) ∨ ( (A ∧ C) ∧ ¬(B ∨ ¬C) )`   (alternate: `!(A && B) || ( (A && C) && !(B || !C) )`)
@@ -64,14 +64,14 @@ A     B     result
 ```
 A     B     C     result
 -------------------------
-0     0     0       ?
-0     0     1       ?
-0     1     0       ?
-0     1     1       ?
-1     0     0       ?
-1     0     1       ?
-1     1     0       ?
-1     1     1       ?
+0     0     0       (True and True) || ((False and False) && (True  or False)) = True 
+0     0     1       (True and True) || ((False and True)) && (True or True) = True
+0     1     0       (True and False) || ((False and False)) && (False or False) = False
+0     1     1       (True and False) || ((False and True)) ... = False
+1     0     0       (False and True) || ((True and False))... = False
+1     0     1       (False and True) || ((True and True)) && (True or True) ... = True
+1     1     0       (False and False) || ((True and False)) = False
+1     1     1       (False and False ) || (True and True ) && (False or True) = True
 ```
 
 ## STRETCH GOAL
