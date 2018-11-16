@@ -37,14 +37,16 @@
 
 Fill out truth tables for the following expressions:
 
+1 is true, 0 is false; 
+
 1. `(A ∧ ¬B)`   (alternate: `(A && !B)`)
 ```
 A     B     result
 -------------------
-0     0       ?
-0     1       ?
-1     0       ?
-1     1       ?
+0     0       False and True = False
+0     1       False and False = False
+1     0       True and True = True
+1     1       True and False = False
 ```
 
 2. `(¬A ∨ B) ∧ ¬(A ∧ ¬B)`   (alternate: `(!A || B) && !(A && !B)`)
